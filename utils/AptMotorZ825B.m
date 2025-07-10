@@ -39,7 +39,7 @@ classdef AptMotorZ825B < handle
 % 			obj.ctrl.SetVelParams(AptMotorTranslation.CHAN1_ID,...
 % 								0, maxAcc, maxVel);
             obj.setvelparams(maxAcc,maxVel);
-            obj.ctrl.SetHomeParams(obj.CHAN1_ID,1,1,1,1);
+%             obj.ctrl.SetHomeParams(obj.CHAN1_ID,1,1,-1,1);
 			obj.maxAcc = maxAcc;
 			obj.maxVel = maxVel;
             obj.ctrl.EnableHWChannel(obj.CHAN1_ID);
