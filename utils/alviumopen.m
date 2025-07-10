@@ -1,9 +1,8 @@
-function [vid, src] = fliropen()
-%     arguments
-%         exposuretime
-%     end
+function [vid,src] = alviumopen()
+%ALVIUMOPEN Summary of this function goes here
+%   Detailed explanation goes here
 
-    vid = videoinput('gentl', 1, 'Mono16');
+    vid = videoinput('gentl', 1, 'Mono10');
 %     vid = videoinput('gentl', 1, 'Morno8');
     src = getselectedsource(vid);
     vid.FramesPerTrigger = 1;

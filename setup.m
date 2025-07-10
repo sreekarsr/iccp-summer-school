@@ -1,40 +1,42 @@
 
-
-
-
-%% open camera
 addpath utils;
-[vid,src] = fliropen(2e4);
 
+%% connect to camera
+[vid,src] = fliropen();
+src.ExposureTime = 2e4;
 
 %% open camera preview
 [imObj] = previewinteractive(vid,true);
 
-
-%% Connect to translation stage
+%% Connect to translation stage Z825B
 hwSerialNo = 27259994;
-motor = AptMotorTranslation(hwSerialNo);
-%%
+motor = AptMotorZ825B(hwSerialNo);
+
+%% Home and set basic params
 motor.home();
 motor.setvelparams(1,1);
 
+%
 motorcenter = 13.7118;
-
 % motorcentre_coin = 10.9968;
+
+
+
 %% align pathlength
 
-% crop part of image
 [~,cropbox] = imcrop;
 vid.ROIPosition = round(cropbox);
-%%
-% align_pathlength(motor,vid,'ref_match\',40e-3, 2000e-3);
-align_pathlength(motor,vid,'oct_align\',10e-3, 3000e-3);% with 1nm/10nm filter
-% align_pathlength(motor,vid,'ref_match\',1e-3, 50e-3);
 
+%% sweep positions (do this if manual alignment doesn't work out)
+align_pathlength(motor,vid,'oct_align\',10e-3, 3000e-3);% with 10nm filter
 
 %% Restore full fov
 vid.ROIPosition = [1 1 vid.VideoResolution-1];
     
+
+%% insert ND filter and scene and align pathlength again
+
+
 %% Do scan with full fov
 
 % N = 100;
