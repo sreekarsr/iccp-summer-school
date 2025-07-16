@@ -4,7 +4,7 @@ classdef AptMotorZ825B < handle
 		CHAN1_ID = 0,
 % 		ROT_MOVE_POS = 1,
 % 		ROT_MOVE_NEG = 2,
-% 		ROT_MOVE_SHORT = 3,
+		ROT_MOVE_SHORT = 3,
 	end
     
 	properties (SetAccess = private)

@@ -1,9 +1,9 @@
-function [vid, src] = fliropen()
-%     arguments
-%         exposuretime
-%     end
+function [vid, src] = fliropen(ID)
+    arguments
+        ID = 1
+    end
 
-    vid = videoinput('gentl', 1, 'Mono16');
+    vid = videoinput('gentl', ID, 'Mono16');
 %     vid = videoinput('gentl', 1, 'Morno8');
     src = getselectedsource(vid);
     vid.FramesPerTrigger = 1;
