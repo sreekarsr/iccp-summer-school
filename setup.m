@@ -13,8 +13,8 @@ src.ExposureTime = 2e4;
 % hwSerialNo = 27259994;
 % hwSerialNo = 27600174;
 hwSerialNo  = 27259173;
-motor = AptMotorTranslation(hwSerialNo);
-% motor = AptMotorZ825B(hwSerialNo);
+% motor = AptMotorTranslation(hwSerialNo);
+motor = AptZ825B(hwSerialNo);
 %% Home and set basic params 
 motor.home();
 motor.setvelparams(1,1);

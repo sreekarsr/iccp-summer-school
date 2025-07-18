@@ -1,4 +1,4 @@
-classdef AptMotorZ825B < handle
+classdef AptZ825B < handle
 	properties (Constant)
 		MOTOR_PROGID = 'MGMOTOR.MGMotorCtrl.1',
 		CHAN1_ID = 0,
@@ -16,7 +16,7 @@ classdef AptMotorZ825B < handle
 
     
 	methods
-		function obj = AptMotorZ825B(hwSerial, maxAcc, maxVel)
+		function obj = AptZ825B(hwSerial, maxAcc, maxVel)
 			if (nargin < 2),
 				maxAcc = 1;	% APT default: 1;
 			end;
