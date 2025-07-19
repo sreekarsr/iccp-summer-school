@@ -56,13 +56,13 @@ imwrite(setposframe,[folder 'setpos.png']);
 
 %% Compute average to see sinusoidal variation
 meanvec = mean(frames,[1,2]);
-figure;
-plot(squeeze(positions), squeeze(meanvec));
-set(gca, 'TickLabelInterpreter', 'latex'); set(gca, 'TickLabelInterpreter', 'latex');
-xlabel('Translation stage position', 'Interpreter', 'latex');
-ylabel('Average intensity', 'Interpreter', 'latex');
-set(gca, 'FontSize', 20); axis tight; drawnow;
-saveas(gcf,[folder 'avg-intensity.png']);
+% figure;
+% plot(squeeze(positions), squeeze(meanvec));
+% set(gca, 'TickLabelInterpreter', 'latex'); set(gca, 'TickLabelInterpreter', 'latex');
+% xlabel('Translation stage position', 'Interpreter', 'latex');
+% ylabel('Average intensity', 'Interpreter', 'latex');
+% set(gca, 'FontSize', 20); axis tight; drawnow;
+% saveas(gcf,[folder 'avg-intensity.png']);
 
 
 %% Save contrast data
